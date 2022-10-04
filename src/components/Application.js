@@ -22,7 +22,7 @@ const days = [
   },
 ];
 
-export default function Application(props) {
+const Application = () => {
   const [ day, setDay ] = useState("Monday");
 
   return (
@@ -52,4 +52,6 @@ export default function Application(props) {
       </section>
     </main>
   );
-}
+};
+
+export default Application
