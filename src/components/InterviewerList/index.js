@@ -13,4 +13,6 @@ const InterviewerList = (props) => {
   );
 };
 
-export default InterviewerList;
+export default Object.assign(InterviewerList, {
+  Item
+});
