@@ -1,10 +1,19 @@
 import React from "react";
+import classNames from "classnames";
 
 import "components/Button.scss";
 
-const Button = ({ children }) => {
+const Button = ({ children, confirm, danger, disabled }) => {
+  const cssClasses = classNames('button', {
+    'button--confirm': confirm,
+    'button--danger': danger,
+  });
+
   return (
-    <button>
+    <button
+      className={cssClasses}
+      disabled={disabled}
+      >
       {children}
     </button>
   );
