@@ -19,7 +19,7 @@ const Item = ({
   spots,
   selected,
   setDay
-  }) => {
+}) => {
   
   const classes = classNames("day-list__item", {
     "day-list__item--selected": selected,

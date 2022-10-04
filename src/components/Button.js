@@ -19,7 +19,7 @@ const Button = ({
     danger,
     disabled,
     onClick
-  }) => {
+}) => {
   const cssClasses = classNames('button', {
     'button--confirm': confirm,
     'button--danger': danger,
