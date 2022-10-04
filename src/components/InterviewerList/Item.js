@@ -12,6 +12,7 @@ import './InterviewerList.scss';
  * @property {String} name - the name of the interviewer
  * @property {String} avatar - url of the interviewer avatar
  * @property {Boolean} selected - is this item selected?
+ * @property {Function} setInterviewer - onClick event handler
  * @returns React Component
  */
 const Item = (props) => {
@@ -24,6 +25,7 @@ const Item = (props) => {
   return (
     <li
       className={classes}
+      onClick={props.setInterviewer}
     >
       <img
         className="interviewers__item-image"
