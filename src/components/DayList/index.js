@@ -18,8 +18,8 @@ const DayList = ({
   }) => {
 
   return (
-    <div>
-    </div>
+    <ul>
+    </ul>
   );
 };
 
