@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import "components/Button.scss";
 
-const Button = ({ children, confirm, danger, disabled }) => {
+const Button = ({ children, confirm, danger, disabled, onClick }) => {
   const cssClasses = classNames('button', {
     'button--confirm': confirm,
     'button--danger': danger,
@@ -13,6 +13,7 @@ const Button = ({ children, confirm, danger, disabled }) => {
     <button
       className={cssClasses}
       disabled={disabled}
+      onClick={onClick}
       >
       {children}
     </button>
