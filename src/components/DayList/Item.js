@@ -1,6 +1,10 @@
 // src/components/DayList/Item.js
 import React from 'react';
 
+import classNames from 'classnames';
+
+import './DayListItem.scss';
+
 /**
  * 
  * @param {Object} props
@@ -17,6 +21,11 @@ const Item = ({
   setDay
   }) => {
   
+  const classes = classNames("day-list__item", {
+    "day-list__item--selected": selected,
+    "day-list__item--full": spots === 0
+  });
+
   const handleDay = () => {
     setDay(name);
   }
@@ -24,6 +33,7 @@ const Item = ({
   return (
     <li
       onClick={handleDay}
+      className={classes}
       >
       <h2
         className="text--regular"
