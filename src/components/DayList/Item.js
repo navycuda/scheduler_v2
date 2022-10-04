@@ -29,6 +29,13 @@ const Item = ({
   const handleDay = () => {
     setDay(name);
   }
+
+  const formatSpots = () => {
+    if (spots === 0) {
+      return 'no spots remaining'
+    }
+    return spots > 1 ? `${spots} spots remaining` : '1 spot remaining';
+  }
   
   return (
     <li
@@ -43,7 +50,7 @@ const Item = ({
       <h3
         className="text--light"
         >
-        {spots} spots remaining
+        {formatSpots()}
       </h3>
     </li>
   );
