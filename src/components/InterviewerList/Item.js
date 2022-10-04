@@ -1,6 +1,7 @@
 // src/components/InterviewerList/Item.js
 import React from 'react';
 
+import './InterviewerList.scss';
 
 /**
  * 
