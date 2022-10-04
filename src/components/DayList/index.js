@@ -15,10 +15,23 @@ const DayList = ({
   day,
   days,
   setDay
-  }) => {
+}) => {
+
+  const dayList = days.map((d) => {
+    return (
+      <Item
+        key={d.id}
+        name={d.name}
+        spots={d.spots}
+        selected={d.name === day}
+        setDay={setDay}
+      />
+    );
+  });
 
   return (
     <ul>
+      {dayList}
     </ul>
   );
 };
