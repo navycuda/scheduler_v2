@@ -1,5 +1,6 @@
 // src/components/InterviewerList/index.js
 import React from 'react';
+import classNames from 'classnames';
 
 import Item from './Item';
 
@@ -24,10 +25,36 @@ const interviewers = [
  * @returns React Component
  */
 const InterviewerList = (props) => {
+  const selectedInterviewer = props.interviewer;
+
+  const getInterviewers = interviewers.map((interviewer) => {
+    return (
+      <Item 
+        key={interviewer.id}
+        id={interviewer.id}
+        name={interviewer.name}
+        avatar={interviewer.avatar}
+        selected={interviewer.id === selectedInterviewer}
+        setInterviewer={() => props.setInterviewer(interviewer.id)}
+      />
+    );
+  });
 
   return (
-    <div>
-    </div>
+    <section
+      className="interviewers"
+    >
+      <h4
+        className="interviewers__header text--light"
+      >
+        Interviewer
+      </h4>
+      <ul
+        className="interviewers__list"
+      >
+        {getInterviewers}
+      </ul>
+    </section>
   );
 };
 
