@@ -21,11 +21,11 @@ const interviewers = [
  * @param {Object} props
  * @param {Array.<{id: Number, name: String, avatar: String}>} props.interviewers - array of interviewers
  * @param {Function(id: Number)} props.setInterviewer - callback for selecting the interviewer
- * @param {Number} props.interviewer - id of the currently selected interviewer
+ * @param {Number} props.value - id of the currently selected interviewer
  * @returns React Component
  */
 const InterviewerList = (props) => {
-  const selectedInterviewer = props.interviewer;
+  const selectedInterviewer = props.value;
 
   const getInterviewers = interviewers.map((interviewer) => {
     return (
@@ -35,7 +35,7 @@ const InterviewerList = (props) => {
         name={interviewer.name}
         avatar={interviewer.avatar}
         selected={interviewer.id === selectedInterviewer}
-        setInterviewer={() => props.setInterviewer(interviewer.id)}
+        setInterviewer={() => props.onChange(interviewer.id)}
       />
     );
   });
