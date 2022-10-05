@@ -5,7 +5,7 @@ import React from 'react';
 /**
  * 
  * @param {Object} props
- * @param {Function} onAdd - add a new appointment 
+ * @param {Function} props.onAdd - add a new appointment 
  * @returns React Component
  */
 const Empty = (props) => {
