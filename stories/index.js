@@ -147,4 +147,9 @@ storiesOf("Appointment", module)
       interviewer={interviewer}
       onEdit={action("onEdit")}
       onDelete={action("onDelete")}
+    />)
+    .add("Confim", () => <Appointment.Confirm
+      message="Delete this appointment?"
+      onCancel={action("onCancel")}
+      onConfirm={action("onConfirm")}
     />);
