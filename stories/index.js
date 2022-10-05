@@ -140,4 +140,5 @@ storiesOf("Appointment", module)
     })
     .add("Appointment", () => <Appointment />)
     .add("AppointmentAt", () => <Appointment time="12pm" />)
-    .add("Header", () => <Appointment.Header time="12pm" />);
+    .add("Header", () => <Appointment.Header time="12pm" />)
+    .add("Empty", () => <Appointment.Empty onAdd={action("setDay")} />);
