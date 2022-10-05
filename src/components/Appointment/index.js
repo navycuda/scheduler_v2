@@ -30,7 +30,10 @@ const Appointment = (props) => {
         time={props.time}
       />
       { props.interview &&
-        <Show />
+        <Show 
+          student={props.interview.student}
+          interviewer={props.interview.interviewer}
+        />
       }
       { !props.interview &&
         <Empty />
