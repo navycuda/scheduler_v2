@@ -135,28 +135,40 @@ storiesOf("InterviewerList", module)
   ));
 
 storiesOf("Appointment", module)
-    .addParameters({
-      backgrounds: [{name: "white", value: "#fff", default: true}]
-    })
-    .add("Appointment", () => <Appointment />)
-    .add("AppointmentAt", () => <Appointment time="12pm" />)
-    .add("Header", () => <Appointment.Header time="12pm" />)
-    .add("Empty", () => <Appointment.Empty onAdd={action("setDay")} />)
-    .add("Show", () => <Appointment.Show
-      student="Lydia Miller-Jones"
-      interviewer={interviewer}
-      onEdit={action("onEdit")}
-      onDelete={action("onDelete")}
-    />)
-    .add("Confim", () => <Appointment.Confirm
-      message="Delete this appointment?"
-      onCancel={action("onCancel")}
-      onConfirm={action("onConfirm")}
-    />)
-    .add("Status", () => <Appointment.Status 
-      message="Deleting"
-    />)
-    .add("Error", () => <Appointment.Error 
-      message="Could not delete appointment"
-      onClose={action("onClose")}
-    />);
+  .addParameters({
+    backgrounds: [{name: "white", value: "#fff", default: true}]
+  })
+  .add("Appointment", () => <Appointment />)
+  .add("AppointmentAt", () => <Appointment time="12pm" />)
+  .add("Header", () => <Appointment.Header time="12pm" />)
+  .add("Empty", () => <Appointment.Empty onAdd={action("setDay")} />)
+  .add("Show", () => <Appointment.Show
+    student="Lydia Miller-Jones"
+    interviewer={interviewer}
+    onEdit={action("onEdit")}
+    onDelete={action("onDelete")}
+  />)
+  .add("Confim", () => <Appointment.Confirm
+    message="Delete this appointment?"
+    onCancel={action("onCancel")}
+    onConfirm={action("onConfirm")}
+  />)
+  .add("Status", () => <Appointment.Status 
+    message="Deleting"
+  />)
+  .add("Error", () => <Appointment.Error 
+    message="Could not delete appointment"
+    onClose={action("onClose")}
+  />)
+  .add("Create", () => <Appointment.Form 
+    interviewers={interviewers}
+    onSave={action("onSave")}
+    onCancel={action("onCancel")}
+  />)
+  .add("Edit", () => <Appointment.Form
+    student="BellaBella!"
+    interviewer={3}
+    interviewers={interviewers}
+    onSave={action("onSave")}
+    onCancel={action("onCancel")}
+  />);
