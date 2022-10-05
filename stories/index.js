@@ -141,4 +141,10 @@ storiesOf("Appointment", module)
     .add("Appointment", () => <Appointment />)
     .add("AppointmentAt", () => <Appointment time="12pm" />)
     .add("Header", () => <Appointment.Header time="12pm" />)
-    .add("Empty", () => <Appointment.Empty onAdd={action("setDay")} />);
+    .add("Empty", () => <Appointment.Empty onAdd={action("setDay")} />)
+    .add("Show", () => <Appointment.Show
+      student="Lydia Miller-Jones"
+      interviewer={interviewer}
+      onEdit={action("onEdit")}
+      onDelete={action("onDelete")}
+    />);
