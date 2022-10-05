@@ -1,11 +1,36 @@
 // src/components/Appointment/Confirm.js
 import React from 'react';
 
-const Confirm = (props) => {
+import Button from 'components/Button';
 
+
+/**
+ * 
+ * @param {Object} props
+ * @param {String} message - Confirmation message
+ * @param {Function} onConfirm - called when the confirm button is clicked
+ * @param {Function} onCancel - called when the cancel button is clicked 
+ * @returns React Component
+ */
+const Confirm = (props) => {
   return (
-    <div>
-    </div>
+    <main className="appointment__card appointment__card--confirm">
+      <h1 className="text--semi-bold">{props.message}</h1>
+      <section className="appointment__actions">
+        <Button 
+          danger
+          onClick={props.onCancel}
+          >
+          Cancel
+        </Button>
+        <Button 
+          danger
+          onClick={props.onConfirm}
+          >
+          Confirm
+        </Button>
+      </section>
+    </main>
   );
 };
 
