@@ -8,32 +8,27 @@ import './DayListItem.scss';
 /**
  * The Day item that is used in day list
  * @param     {Object}    props
- * @param     {String}    name - name of the day
- * @param     {Number}    sports - the number of spots remaining
- * @param     {Boolean}   selected - is this day selected
- * @param     {Function}  setDay - accepts the name of the day
+ * @param     {String}    props.name - name of the day
+ * @param     {Number}    props.spots - the number of spots remaining
+ * @param     {Boolean}   props.selected - is this day selected
+ * @param     {Function}  props.setDay - accepts the name of the day
  */
-const Item = ({
-  name,
-  spots,
-  selected,
-  setDay
-}) => {
-  
+const Item = (props) => {
+  // Sets the class names according to props
   const classes = classNames("day-list__item", {
-    "day-list__item--selected": selected,
-    "day-list__item--full": spots === 0
+    "day-list__item--selected": props.selected,
+    "day-list__item--full": props.spots === 0
   });
 
   const handleDay = () => {
-    setDay(name);
+    setDay(props.name);
   }
 
   const formatSpots = () => {
-    if (spots === 0) {
+    if (props.spots === 0) {
       return 'no spots remaining'
     }
-    return spots > 1 ? `${spots} spots remaining` : '1 spot remaining';
+    return props.spots > 1 ? `${props.spots} spots remaining` : '1 spot remaining';
   }
   
   return (
@@ -44,7 +39,7 @@ const Item = ({
       <h2
         className="text--regular"
         >
-        {name}
+        {props.name}
       </h2>
       <h3
         className="text--light"
