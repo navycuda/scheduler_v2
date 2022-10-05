@@ -155,4 +155,8 @@ storiesOf("Appointment", module)
     />)
     .add("Status", () => <Appointment.Status 
       message="Deleting"
+    />)
+    .add("Error", () => <Appointment.Error 
+      message="Could not delete appointment"
+      onClose={action("onClose")}
     />);
