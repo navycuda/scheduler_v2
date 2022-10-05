@@ -36,9 +36,9 @@ const Application = () => {
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
         <DayList 
-          day={day}
+          value={day}
           days={days}
-          setDay={(day) => setDay(day)}
+          onChange={(day) => setDay(day)}
         />
         </nav>
         <img
