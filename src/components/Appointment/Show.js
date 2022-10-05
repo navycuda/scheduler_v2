@@ -1,6 +1,15 @@
 // src/components/Appointment/Show.js
 import React from 'react';
 
+/**
+ * 
+ * @param {Object} props
+ * @param {String} props.student - Full name of student
+ * @param {{id: Number, name: String, avatar: String}} props.interviewer - Interviewer object
+ * @param {Function} props.onEdit - called when the edit button is pressed
+ * @param {Function} props.onDelete - called when the delete butoon is pressed
+ * @returns React Component
+ */
 const Show = (props) => {
 
   return (
@@ -29,5 +38,6 @@ const Show = (props) => {
     </main>
   );
 };
+
 
 export default Show;
