@@ -12,13 +12,23 @@ import views from './views';
 
 import './Appointment.scss';
 
-
+/**
+ * 
+ * @param {Object} props
+ * @param {Number} props.id - the id of this appointment
+ * @param {String} props.time - the appointment time
+ * @param {Object} props.interview - object with interview parameters
+ * @returns 
+ */
 const Appointment = (props) => {
 
   return (
     <article
       className="appointment"
     >
+      <Header 
+        time={props.time}
+      />
     </article>
   );
 };
