@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import Axios from "axios";
+import React, { useState, useEffect } from "react";
 
 import "components/Application.scss";
 
@@ -48,9 +49,26 @@ const appointments = {
 
 const Application = () => {
   const [ day, setDay ] = useState("Monday");
+  const [ days, setDays ] = useState([]);
 
+  // Deal with days
+  useEffect(() => {
+    const urlGetDays = '/api/days';
+
+    Promise
+      .all([
+        Axios.get(urlGetDays)
+      ])
+      .then((all) => {
+        for (const each of all) {
+          console.log(each.data);
+        }
+        setDays(all[0].data);
+      });
+  }, []);
+
+  // Deal with Appointments
   const mockAppointments = Object.values(appointments).map((appointment) => {
-
     return (
       <Appointment 
         key={appointment.id}
