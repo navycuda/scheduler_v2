@@ -2,10 +2,10 @@
 import React from 'react';
 
 /**
- * 
- * @param {Object} props
- * @param {String} props.message - Error message
- * @param {Function} props.onClose - called when the user clicks the close button
+ * Error component shows when something is wrong
+ * @param     {Object}    props
+ * @param     {String}    props.message - Error message
+ * @param     {Function}  props.onClose - called when the user clicks the close button
  * @returns React Component
  */
 const Error = (props) => {

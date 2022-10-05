@@ -6,14 +6,13 @@ import classNames from 'classnames';
 import './InterviewerList.scss';
 
 /**
- * 
- * @param {Object} props
- * @param {Number} props.id - the id of the interviewer
- * @param {String} props.name - the name of the interviewer
- * @param {String} props.avatar - url of the interviewer avatar
- * @param {Boolean} props.selected - is this item selected?
- * @param {Function} props.setInterviewer - onClick event handler
- * @returns React Component
+ * An interviewer
+ * @param     {Object}    props
+ * @param     {Number}    props.id - the id of the interviewer
+ * @param     {String}    props.name - the name of the interviewer
+ * @param     {String}    props.avatar - url of the interviewer avatar
+ * @param     {Boolean}   props.selected - is this item selected?
+ * @param     {Function}  props.setInterviewer - onClick event handler
  */
 const Item = (props) => {
   const classes = classNames("interviewers__item",

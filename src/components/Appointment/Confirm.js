@@ -5,12 +5,11 @@ import Button from 'components/Button';
 
 
 /**
- * 
- * @param {Object} props
- * @param {String} props.message - Confirmation message
- * @param {Function} props.onConfirm - called when the confirm button is clicked
- * @param {Function} props.onCancel - called when the cancel button is clicked 
- * @returns React Component
+ * Confirm user action component
+ * @param     {Object}    props
+ * @param     {String}    props.message - Confirmation message
+ * @param     {Function}  props.onConfirm - called when the confirm button is clicked
+ * @param     {Function}  props.onCancel - called when the cancel button is clicked 
  */
 const Confirm = (props) => {
   return (

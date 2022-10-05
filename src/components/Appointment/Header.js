@@ -2,10 +2,9 @@
 import React from 'react';
 
 /**
- * 
- * @param {Object} props
- * @param {String} props.time - the time of the appointment "12pm" 
- * @returns React Component
+ * Header for the appointment, shows time
+ * @param     {Object}    props
+ * @param     {String}    props.time - the time of the appointment "12pm" 
  */
 const Header = (props) => {
 

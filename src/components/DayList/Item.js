@@ -6,13 +6,12 @@ import classNames from 'classnames';
 import './DayListItem.scss';
 
 /**
- * 
- * @param {Object} props
- * @property {String} name - name of the day
- * @property {Number} sports - the number of spots remaining
- * @property {Boolean} selected - is this day selected
- * @property {Function} setDay - accepts the name of the day
- * @returns react component
+ * The Day item that is used in day list
+ * @param     {Object}    props
+ * @param     {String}    name - name of the day
+ * @param     {Number}    sports - the number of spots remaining
+ * @param     {Boolean}   selected - is this day selected
+ * @param     {Function}  setDay - accepts the name of the day
  */
 const Item = ({
   name,

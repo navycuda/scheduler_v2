@@ -2,13 +2,12 @@
 import React from 'react';
 
 /**
- * 
- * @param {Object} props
- * @param {String} props.student - Full name of student
- * @param {{id: Number, name: String, avatar: String}} props.interviewer - Interviewer object
- * @param {Function} props.onEdit - called when the edit button is pressed
- * @param {Function} props.onDelete - called when the delete butoon is pressed
- * @returns React Component
+ * This component shows details about a booked appointment
+ * @param     {Object}    props
+ * @param     {String}    props.student - Full name of student
+ * @param     {{id: Number, name: String, avatar: String}} props.interviewer - Interviewer object
+ * @param     {Function}  props.onEdit - called when the edit button is pressed
+ * @param     {Function}  props.onDelete - called when the delete butoon is pressed
  */
 const Show = (props) => {
 

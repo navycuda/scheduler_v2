@@ -13,12 +13,11 @@ import views from './views';
 import './Appointment.scss';
 
 /**
- * 
- * @param {Object} props
- * @param {Number} props.id - the id of this appointment
- * @param {String} props.time - the appointment time
- * @param {Object} props.interview - object with interview parameters
- * @returns 
+ * The component that displays the appointment details
+ * @param     {Object}    props
+ * @param     {Number}    props.id - the id of this appointment
+ * @param     {String}    props.time - the appointment time
+ * @param     {Object}    props.interview - object with interview parameters
  */
 const Appointment = (props) => {
 

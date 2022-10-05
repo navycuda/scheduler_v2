@@ -4,14 +4,13 @@ import classNames from "classnames";
 import "components/Button.scss";
 
 /**
- * 
- * @param {object} props
- * @property {Array} children - React Components
- * @property {Boolean} confirm - Sets button type to confirm
- * @property {Boolean} danger - Sets button type to danger
- * @property {Boolean} disabled - Sets button type to danger
- * @property {Function} onClick - onClick!
- * @returns React Component
+ * Reusable Button for components
+ * @param     {object}    props
+ * @param     {Array}     children - React Components
+ * @param     {Boolean}   confirm - Sets button type to confirm
+ * @param     {Boolean}   danger - Sets button type to danger
+ * @param     {Boolean}   disabled - Sets button type to danger
+ * @param     {Function}  onClick - onClick!
  */
 const Button = ({
     children,

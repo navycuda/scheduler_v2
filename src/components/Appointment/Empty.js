@@ -3,10 +3,9 @@ import React from 'react';
 
 
 /**
- * 
- * @param {Object} props
- * @param {Function} props.onAdd - add a new appointment 
- * @returns React Component
+ * This componenet is displayed when no appointment is booked
+ * @param     {Object}    props
+ * @param     {Function}  props.onAdd - add a new appointment 
  */
 const Empty = (props) => {
 

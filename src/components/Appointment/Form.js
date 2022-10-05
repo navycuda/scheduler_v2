@@ -4,14 +4,13 @@ import InterviewerList from 'components/InterviewerList';
 import Button from 'components/Button';
 
 /**
- * 
- * @param {Object} props
- * @param {String} props.student - Name of the student
- * @param {Array.<{id: Number, name: String, avatar: String}>} props.interviewers - Array of interviewer objects 
- * @param {Number} props.interviewer - The selected interviewer
- * @param {Function} props.onSave - Save to database
- * @param {Function} props.onCancel - Cancel this form and return
- * @returns React Component
+ * Form component used for edit and create
+ * @param     {Object}    props
+ * @param     {String}    props.student - Name of the student
+ * @param     {Array.<{id: Number, name: String, avatar: String}>} props.interviewers - Array of interviewer objects 
+ * @param     {Number}    props.interviewer - The selected interviewer
+ * @param     {Function}  props.onSave - Save to database
+ * @param     {Function}  props.onCancel - Cancel this form and return
  */
 const Form = (props) => {
   const [ student, setStudent ] = useState(props.student || "");

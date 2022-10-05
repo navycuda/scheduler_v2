@@ -2,13 +2,11 @@
 import React from 'react';
 
 /**
- * 
- * @param {Object} props
- * @param {String} props.message 
- * @returns 
+ * This component shows status/loading of an inprogress operation
+ * @param     {Object} props
+ * @param     {String} props.message 
  */
 const Status = (props) => {
-
   return (
     <main className="appointment__card appointment__card--status">
       <img
