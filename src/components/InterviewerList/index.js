@@ -55,7 +55,7 @@ const InterviewerList = (props) => {
     </section>
   );
 };
-Interv
+
 export default Object.assign(InterviewerList, {
   Item
 });
