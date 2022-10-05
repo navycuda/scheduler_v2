@@ -7,9 +7,9 @@ import Button from 'components/Button';
 /**
  * 
  * @param {Object} props
- * @param {String} message - Confirmation message
- * @param {Function} onConfirm - called when the confirm button is clicked
- * @param {Function} onCancel - called when the cancel button is clicked 
+ * @param {String} props.message - Confirmation message
+ * @param {Function} props.onConfirm - called when the confirm button is clicked
+ * @param {Function} props.onCancel - called when the cancel button is clicked 
  * @returns React Component
  */
 const Confirm = (props) => {
