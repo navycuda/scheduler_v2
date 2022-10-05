@@ -10,7 +10,6 @@ import React from 'react';
  * @param     {Function}  props.onDelete - called when the delete butoon is pressed
  */
 const Show = (props) => {
-
   return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">

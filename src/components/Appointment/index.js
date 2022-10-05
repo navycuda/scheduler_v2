@@ -20,7 +20,6 @@ import './Appointment.scss';
  * @param     {Object}    props.interview - object with interview parameters
  */
 const Appointment = (props) => {
-
   return (
     <article
       className="appointment"

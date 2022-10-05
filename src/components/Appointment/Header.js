@@ -7,7 +7,6 @@ import React from 'react';
  * @param     {String}    props.time - the time of the appointment "12pm" 
  */
 const Header = (props) => {
-
   return (
     <header
       className="appointment__time"

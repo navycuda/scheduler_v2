@@ -17,11 +17,12 @@ const Form = (props) => {
   const [ interviewer, setInterviewer ] = useState(props.interviewer || null);
   const placeholder = student ? null : "Enter Student Name";
 
-
+  // Handles the onChange of the intput and sets the student name
   const inputHandler = (e) => {
     setStudent(e.target.value);
   }
 
+  // Resets all the values to zero, then cancels the Form
   const reset = () => {
     setStudent("");
     setInterviewer(null);

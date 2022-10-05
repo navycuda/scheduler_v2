@@ -15,12 +15,11 @@ const interviewers = [
   { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
 ];
 
-
 /**
  * Lists all of the interviewers
  * @param     {Object}    props
  * @param     {Array.<{id: Number, name: String, avatar: String}>} props.interviewers - array of interviewers
- * @param     {Function(id: Number)} props.setInterviewer - callback for selecting the interviewer
+ * @param     {Function}  props.setInterviewer - callback for selecting the interviewer
  * @param     {Number}    props.value - id of the currently selected interviewer
  */
 const InterviewerList = (props) => {
@@ -56,7 +55,7 @@ const InterviewerList = (props) => {
     </section>
   );
 };
-
+Interv
 export default Object.assign(InterviewerList, {
   Item
 });

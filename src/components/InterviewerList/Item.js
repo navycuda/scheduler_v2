@@ -20,7 +20,6 @@ const Item = (props) => {
     "interviewers__item--selected": props.selected
   });
 
-
   return (
     <li
       className={classes}
