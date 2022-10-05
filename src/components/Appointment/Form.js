@@ -16,9 +16,18 @@ import Button from 'components/Button';
 const Form = (props) => {
   const [ student, setStudent ] = useState(props.student || "");
   const [ interviewer, setInterviewer ] = useState(props.interviewer || null);
-  const placeholder = student ? student : "Enter Student Name";
+  const placeholder = student ? null : "Enter Student Name";
 
 
+  const inputHandler = (e) => {
+    setStudent(e.target.value);
+  }
+
+  const reset = () => {
+    setStudent("");
+    setInterviewer(null);
+    props.onCancel();
+  }
 
   return (
     <main className="appointment__card appointment__card--create">
@@ -29,21 +38,21 @@ const Form = (props) => {
             name={student}
             type="text"
             placeholder={placeholder}
-            /*
-              This must be a controlled component
-              your code goes here
-            */
+            value={student}
+            onChange={inputHandler}
           />
         </form>
         <InterviewerList 
-          /* your code goes here */
+          interviewers={props.interviewers}
+          value={interviewer}
+          onChange={setInterviewer}
         />
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
           <Button
             danger
-            onClick={props.onCancel}
+            onClick={reset}
             >
             Cancel
           </Button>
