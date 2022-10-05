@@ -8,11 +8,11 @@ import './InterviewerList.scss';
 /**
  * 
  * @param {Object} props
- * @property {Number} id - the id of the interviewer
- * @property {String} name - the name of the interviewer
- * @property {String} avatar - url of the interviewer avatar
- * @property {Boolean} selected - is this item selected?
- * @property {Function} setInterviewer - onClick event handler
+ * @param {Number} props.id - the id of the interviewer
+ * @param {String} props.name - the name of the interviewer
+ * @param {String} props.avatar - url of the interviewer avatar
+ * @param {Boolean} props.selected - is this item selected?
+ * @param {Function} props.setInterviewer - onClick event handler
  * @returns React Component
  */
 const Item = (props) => {
