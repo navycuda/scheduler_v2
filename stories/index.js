@@ -152,4 +152,7 @@ storiesOf("Appointment", module)
       message="Delete this appointment?"
       onCancel={action("onCancel")}
       onConfirm={action("onConfirm")}
+    />)
+    .add("Status", () => <Appointment.Status 
+      message="Deleting"
     />);
