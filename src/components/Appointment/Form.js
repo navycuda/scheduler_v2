@@ -1,19 +1,24 @@
 // src/components/Appointment/Form.js
-import React from 'react';
+import React, { useState } from 'react';
 import InterviewerList from 'components/InterviewerList';
 import Button from 'components/Button';
 
 /**
  * 
  * @param {Object} props
- * @param {String} student - Name of the student
- * @param {Array.<{id: Number, name: String, avatar: String}>} interviewers - Array of interviewer objects 
- * @param {Number} interviewer - The selected interviewer
+ * @param {String} props.student - Name of the student
+ * @param {Array.<{id: Number, name: String, avatar: String}>} props.interviewers - Array of interviewer objects 
+ * @param {Number} props.interviewer - The selected interviewer
  * @param {Function} props.onSave - Save to database
  * @param {Function} props.onCancel - Cancel this form and return
  * @returns React Component
  */
 const Form = (props) => {
+  const [ student, setStudent ] = useState(props.student || "");
+  const [ interviewer, setInterviewer ] = useState(props.interviewer || null);
+  const placeholder = student ? student : "Enter Student Name";
+
+
 
   return (
     <main className="appointment__card appointment__card--create">
@@ -21,9 +26,9 @@ const Form = (props) => {
         <form autoComplete="off">
           <input
             className="appointment__create-input text--semi-bold"
-            name="name"
+            name={student}
             type="text"
-            placeholder="Enter Student Name"
+            placeholder={placeholder}
             /*
               This must be a controlled component
               your code goes here
@@ -36,8 +41,18 @@ const Form = (props) => {
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          <Button danger {/* your code goes here */}>Cancel</Button>
-          <Button confirm {/* your code goes here */}>Save</Button>
+          <Button
+            danger
+            onClick={props.onCancel}
+            >
+            Cancel
+          </Button>
+          <Button
+            confirm
+            onClick={props.onSave}
+            >
+            Save
+          </Button>
         </section>
       </section>
     </main>
