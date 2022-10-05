@@ -20,8 +20,8 @@ const interviewers = [
  * 
  * @param {Object} props
  * @param {Array.<{id: Number, name: String, avatar: String}>} props.interviewers - array of interviewers
- * @param {Function(id: Number)} setInterviewer - callback for selecting the interviewer
- * @param {Number} interviewer - id of the currently selected interviewer
+ * @param {Function(id: Number)} props.setInterviewer - callback for selecting the interviewer
+ * @param {Number} props.interviewer - id of the currently selected interviewer
  * @returns React Component
  */
 const InterviewerList = (props) => {
