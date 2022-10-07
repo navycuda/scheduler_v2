@@ -1,3 +1,5 @@
+// @ts-check
+
 import Axios from "axios";
 import React, { useState, useEffect } from "react";
 
@@ -45,11 +47,31 @@ const appointments = {
   }
 };
 
-
+/**
+ * @type  {State}
+ */
+const emptyState = {
+  day: "Monday",
+  days: [],
+  appointments: {}
+};
 
 const Application = () => {
-  const [ day, setDay ] = useState("Monday");
-  const [ days, setDays ] = useState([]);
+  const [ state, setState ] = useState(emptyState);
+
+  /**
+   * sets the currently selected day
+   * @param {String} day 
+   * @returns {void}
+   */
+  const setDay = (day) => setState({...state, day});
+  /**
+   * Sets the days
+   * @param {Array.<Day>} days days to set state with
+   */
+  const setDays = (days) => setState((prev) => {
+    return {...prev, days };
+  });
 
   // Deal with days
   useEffect(() => {
@@ -90,8 +112,8 @@ const Application = () => {
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
         <DayList 
-          value={day}
-          days={days}
+          value={state.day}
+          days={state.days}
           onChange={(day) => setDay(day)}
         />
         </nav>
