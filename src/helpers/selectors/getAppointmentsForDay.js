@@ -1,4 +1,7 @@
 // src/helpers/selectors/getAppointmentsForDay.js
+// @ts-check
+
+import getAppointmentsByIds from "./getAppointmentsByIds";
 
 /**
  * Gets the Appoints for a day
@@ -6,7 +9,7 @@
  * @param     {Array.<Day>}   state.days - Array of day objects
  * @param     {Appointments}  state.appointments
  * @param     {String}        day 
- * @returns   {Array.<Appointment>}
+ * @returns   {Array|Appointments}
  */
 const getAppointmentsForDay = (state, day) => {
   const selectedDay = state.days.find(({ name }) => name === day);
