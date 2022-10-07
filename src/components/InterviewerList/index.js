@@ -17,10 +17,10 @@ const interviewers = [
 
 /**
  * Lists all of the interviewers
- * @param     {Object}    props
- * @param     {Array.<{id: Number, name: String, avatar: String}>} props.interviewers - array of interviewers
- * @param     {Function}  props.setInterviewer - callback for selecting the interviewer
- * @param     {Number}    props.value - id of the currently selected interviewer
+ * @param     {Object}              props
+ * @param     {Array.<interviewer>} props.interviewers - array of interviewers
+ * @param     {Function}            props.onChange - callback for selecting the interviewer
+ * @param     {Number}              props.value - id of the currently selected interviewer
  */
 const InterviewerList = (props) => {
   const selectedInterviewer = props.value;
