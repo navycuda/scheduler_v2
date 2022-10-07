@@ -14,8 +14,8 @@ const getInterview = (state, interview) => {
   const interviewer = state.interviewers[interview.interviewer.id];
 
   return {
-    student: interview.student,
-    interviewer
+    interviewer,
+    student: interview.student
   };
 };
 
