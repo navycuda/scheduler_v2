@@ -59,6 +59,8 @@ const emptyState = {
 const Application = () => {
   const [ state, setState ] = useState(emptyState);
 
+  const dailyAppointments = [];
+
   /**
    * sets the currently selected day
    * @param {String} day 
@@ -68,6 +70,7 @@ const Application = () => {
   /**
    * Sets the days
    * @param {Array.<Day>} days days to set state with
+   * @returns {void}
    */
   const setDays = (days) => setState((prev) => {
     return {...prev, days };
@@ -76,21 +79,20 @@ const Application = () => {
   // Deal with days
   useEffect(() => {
     const urlGetDays = '/api/days';
+    const urlGetAppointments = '/api/appointments';
 
     Promise
       .all([
-        Axios.get(urlGetDays)
+        Axios.get(urlGetDays),
+        Axios.get(urlGetAppointments)
       ])
       .then((all) => {
-        for (const each of all) {
-          console.log(each.data);
-        }
         setDays(all[0].data);
       });
   }, []);
 
   // Deal with Appointments
-  const mockAppointments = Object.values(appointments).map((appointment) => {
+  const mockAppointments = dailyAppointments.map((appointment) => {
     return (
       <Appointment 
         key={appointment.id}
