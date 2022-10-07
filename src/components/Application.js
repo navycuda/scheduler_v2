@@ -8,6 +8,8 @@ import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "./Appointment";
 
+import { getAppointmentsForDay } from "helpers/selectors";
+
 const appointments = {
   "1": {
     id: 1,
@@ -59,7 +61,7 @@ const emptyState = {
 const Application = () => {
   const [ state, setState ] = useState(emptyState);
 
-  const dailyAppointments = [];
+  const dailyAppointments = getAppointmentsForDay(state);
 
   /**
    * sets the currently selected day
@@ -80,14 +82,21 @@ const Application = () => {
   useEffect(() => {
     const urlGetDays = '/api/days';
     const urlGetAppointments = '/api/appointments';
+    const urlGetInterviewers = '/api/interviewers';
 
     Promise
       .all([
         Axios.get(urlGetDays),
-        Axios.get(urlGetAppointments)
+        Axios.get(urlGetAppointments),
+        Axios.get(urlGetInterviewers)
       ])
       .then((all) => {
-        setDays(all[0].data);
+
+        setState((previous) => ({
+          ...previous,
+          days: all[0].data,
+          appointments: all[1].data
+        }));
       });
   }, []);
 
