@@ -10,7 +10,7 @@
  * @property    {Number}    key - Required for React
  * @property    {Number}    [id] - The id of this appointment
  * @property    {String}    [time] - The time of the interview ie "12pm"
- * @property    {interview} [interview] - The interview object for this Appointment
+ * @property    {Interview} [interview] - The interview object for this Appointment
  */
 /**
  * Appointments

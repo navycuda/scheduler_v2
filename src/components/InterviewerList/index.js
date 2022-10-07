@@ -18,7 +18,7 @@ const interviewers = [
 /**
  * Lists all of the interviewers
  * @param     {Object}              props
- * @param     {Array.<interviewer>} props.interviewers - array of interviewers
+ * @param     {Array.<Interviewer>} props.interviewers - array of interviewers
  * @param     {Function}            props.onChange - callback for selecting the interviewer
  * @param     {Number}              props.value - id of the currently selected interviewer
  */

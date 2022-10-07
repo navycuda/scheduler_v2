@@ -5,7 +5,7 @@ import React from 'react';
  * This component shows details about a booked appointment
  * @param     {Object}    props
  * @param     {String}    props.student - Full name of student
- * @param     {interviewer} props.interviewer - Interviewer object
+ * @param     {Interviewer} props.interviewer - Interviewer object
  * @param     {Function}  props.onEdit - called when the edit button is pressed
  * @param     {Function}  props.onDelete - called when the delete butoon is pressed
  */

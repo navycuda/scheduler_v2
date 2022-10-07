@@ -8,7 +8,7 @@ import Button from 'components/Button';
  * Form component used for edit and create
  * @param     {Object}    props
  * @param     {String}    props.student - Name of the student
- * @param     {Array.<interviewer>} props.interviewers - Array of interviewer objects 
+ * @param     {Array.<Interviewer>} props.interviewers - Array of interviewer objects 
  * @param     {Number}    props.interviewer - The selected interviewer
  * @param     {Function}  props.onSave - Save to database
  * @param     {Function}  props.onCancel - Cancel this form and return

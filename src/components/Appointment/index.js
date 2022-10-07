@@ -17,7 +17,7 @@ import './Appointment.scss';
  * @param     {Object}        props
  * @param     {Number}        props.id - the id of this appointment
  * @param     {String}        props.time - the appointment time
- * @param     {interview}     props.interview - object with interview parameters
+ * @param     {Interview}     props.interview - object with interview parameters
  */
 const Appointment = (props) => {
   return (

@@ -10,4 +10,5 @@
  * @property    {String}        day - The currently selected Day
  * @property    {Array.<Day>}   days - Array of days to work with
  * @property    {Appointments}  appointments - Object of Appointments
+ * @property    {Interviewers}  interviewers - Object of interviewers
  */
