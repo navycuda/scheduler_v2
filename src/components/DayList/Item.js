@@ -21,7 +21,7 @@ const Item = (props) => {
   });
 
   const handleDay = () => {
-    setDay(props.name);
+    props.setDay(props.name);
   }
 
   const formatSpots = () => {
