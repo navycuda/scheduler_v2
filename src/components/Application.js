@@ -8,7 +8,7 @@ import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "./Appointment";
 
-import { getAppointmentsForDay } from "helpers/selectors";
+import { getAppointmentsForDay, getInterview } from "helpers/selectors";
 
 const appointments = {
   "1": {
@@ -101,7 +101,8 @@ const Application = () => {
   }, []);
 
   // Deal with Appointments
-  const mockAppointments = dailyAppointments.map((appointment) => {
+  const schedule = dailyAppointments.map((appointment) => {
+    const interview = getInterview(state, appointment.interview);
     return (
       <Appointment 
         key={appointment.id}
@@ -109,7 +110,7 @@ const Application = () => {
       />
     );
   });
-  mockAppointments.push(<Appointment key="last" time="5pm" />);
+  schedule.push(<Appointment key="last" time="5pm" />);
 
 
   return (
@@ -135,7 +136,7 @@ const Application = () => {
         />
       </section>
       <section className="schedule">
-        {mockAppointments}
+        {schedule}
       </section>
     </main>
   );
