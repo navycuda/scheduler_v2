@@ -3,28 +3,35 @@
 import { useState } from "react";
 
 /**
- *
+ * The useVisualModeCustomHook
  * @param     {String}    initial - The inital mode to set
+ * @returns   {VisualMode}
  */
 const useVisualMode = (initial) => {
-  const [ mode, setMode ] = useState(initial);
+  const [ history, setHistory ] = useState([initial]);
 
-  
   /**
-   * Transition function, part of useVisualMode custom hook
-   * @param     {String}    nextMode - new visual mode to set
+   * @type    {Transition}
    */
-  const transition = (nextMode) => {
-    setMode(nextMode);
+  const transition = (nextMode, isReplacingPrevious) => {
+    setHistory((previous) => isReplacingPrevious ? 
+    [...previous.slice(0, previous.length - 1), nextMode]
+    :
+    [...previous, nextMode]
+    );
   };
 
   /**
-   * Back function, part of useVisualMode custom hook, used to
-   * return to the previous view
+   * @type   {Back}
    */
+  const back = () => {
+    setHistory((previous) => {
+      if (previous.length < 2) return previous;
+      return previous.slice(0, previous.length - 1)
+    });
+  };
 
-
-  return { mode, transition };
+  return { mode:history[history.length - 1], transition, back };
 };
 
 export default useVisualMode;
