@@ -38,7 +38,7 @@ const Appointment = (props) => {
       <Header 
         time={props.time}
       />
-      { mode = EMPTY  &&
+      { mode === EMPTY  &&
         <Empty 
           onAdd={() => transition(CREATE)}
         />

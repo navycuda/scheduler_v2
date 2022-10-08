@@ -60,9 +60,6 @@ const emptyState = {
 
 const Application = () => {
   const [ state, setState ] = useState(emptyState);
-
-  const dailyAppointments = getAppointmentsForDay(state);
-
   /**
    * sets the currently selected day
    * @param {String} day 
@@ -77,7 +74,9 @@ const Application = () => {
   const setDays = (days) => setState((prev) => {
     return {...prev, days };
   });
-
+  
+  const dailyAppointments = getAppointmentsForDay(state);
+  
   // Deal with days
   useEffect(() => {
     const urlGetDays = '/api/days';
