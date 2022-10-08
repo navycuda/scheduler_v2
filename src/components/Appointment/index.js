@@ -12,6 +12,12 @@ import views from './views';
 
 import './Appointment.scss';
 
+import { useVisualMode } from 'helpers/hooks';
+
+const EMPTY = "EMPTY";
+const SHOW = "SHOW";
+const CREATE = "CREATE";
+
 /**
  * The component that displays the appointment details
  * @param     {Object}        props
@@ -20,6 +26,11 @@ import './Appointment.scss';
  * @param     {Interview}     props.interview - object with interview parameters
  */
 const Appointment = (props) => {
+  const { mode, transition, back } = useVisualMode(
+    props.interview ? SHOW : EMPTY
+  );
+
+
   return (
     <article
       className="appointment"
@@ -27,14 +38,16 @@ const Appointment = (props) => {
       <Header 
         time={props.time}
       />
-      { props.interview &&
+      { mode = EMPTY  &&
+        <Empty 
+          onAdd={() => transition(CREATE)}
+        />
+      }
+      { mode === SHOW &&
         <Show 
           student={props.interview.student}
           interviewer={props.interview.interviewer}
         />
-      }
-      { !props.interview &&
-        <Empty />
       }
     </article>
   );
