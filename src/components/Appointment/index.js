@@ -31,6 +31,10 @@ const Appointment = (props) => {
     props.interview ? SHOW : EMPTY
   );
 
+  const save = (name, interviewer) => {
+    
+  }
+
 
   return (
     <article
@@ -48,6 +52,11 @@ const Appointment = (props) => {
         <Show 
           student={props.interview.student}
           interviewer={props.interview.interviewer}
+        />
+      }
+      { mode === CREATE &&
+        <Form
+          
         />
       }
     </article>
