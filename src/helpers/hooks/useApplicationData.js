@@ -75,8 +75,28 @@ const useApplicationData = () => {
       });
   };
 
+  useEffect(() => {
+    const urlGetDays = '/api/days';
+    const urlGetAppointments = '/api/appointments';
+    const urlGetInterviewers = '/api/interviewers';
 
-  
+    Promise
+      .all([
+        Axios.get(urlGetDays),
+        Axios.get(urlGetAppointments),
+        Axios.get(urlGetInterviewers)
+      ])
+      .then((all) => {
+
+        setState((previous) => ({
+          ...previous,
+          days: all[0].data,
+          appointments: all[1].data,
+          interviewers:all[2].data
+        }));
+      });
+  }, []);
+
   return {
     state,
     setDay,
