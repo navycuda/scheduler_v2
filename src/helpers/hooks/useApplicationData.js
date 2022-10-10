@@ -42,7 +42,48 @@ const useApplicationData = () => {
       });
   };
 
+  /**
+   * @type {EditInterview}
+   */
+  const editInterview = async (id, interview) => {
+    await cancelInterview(id);
+    await bookInterview(id, interview);
+  };
 
+  /**
+   * @type {CancelInterview}
+   */
+  const cancelInterview = async (id) => {
+    return Axios.delete(getAppointmentUrl(id))
+      .then(() => {
+        setState((previous) => ({
+          ...previous,
+          appointments: {
+            ...previous.appointments,
+            [id]: {
+              ...previous.appointments[id],
+              interview: null
+            }
+          },
+          days: previous.days.map((day) => {
+            if (day.name === previous.day) {
+              day.spots += 1;
+            }
+            return day;
+          })
+        }));
+      });
+  };
+
+
+  
+  return {
+    state,
+    setDay,
+    bookInterview,
+    editInterview,
+    cancelInterview
+  };
 };
 
 
