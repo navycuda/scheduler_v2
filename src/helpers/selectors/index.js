@@ -2,3 +2,4 @@
 export {default as getAppointmentsForDay} from './getAppointmentsForDay';
 export {default as getAppointmentsByIds} from './getAppointmentsByIds';
 export {default as getInterview} from './getInterview';
+export {default as getAppointmentUrl} from './getAppointmentUrl';
