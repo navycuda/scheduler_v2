@@ -21,10 +21,10 @@ const CREATE = "CREATE";
 /**
  * The component that displays the appointment details
  * @param     {Object}        props
- * @param     {Number}        props.id - the id of this appointment
- * @param     {Number|String} [props.key] - react component key
- * @param     {String}        [props.time] - the appointment time
- * @param     {Interview}     props.interview - object with interview parameters
+ * @param     {Number}        [props.id] - the id of this appointment
+ * @param     {Number|String} props.key - react component key
+ * @param     {String}        props.time - the appointment time
+ * @param     {Interview}     [props.interview] - object with interview parameters
  */
 const Appointment = (props) => {
   const { mode, transition, back } = useVisualMode(
