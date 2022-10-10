@@ -38,6 +38,7 @@
  */
 /**
  * Cancels an existing interview
+ * @async
  * @callback    CancelInterview
  * @param       {Number}      id          The id of the appointment
  * @returns     {Promise}
