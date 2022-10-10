@@ -55,6 +55,7 @@
  * @property    {SetDay}            setDay  Sets the current day
  * @property    {BookInterview}     bookInterview books an interview in this slot
  * @property    {EditInterview}     editInterview edits an existing interview
+ * @property    {CancelInterview}   cancelInterview removes an existing interview
  */
 /**
  * useVisualMode return object
