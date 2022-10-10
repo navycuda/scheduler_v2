@@ -17,6 +17,7 @@ import { useVisualMode } from 'helpers/hooks';
 const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
+const SAVING = "SAVING";
 
 /**
  * The component that displays the appointment details
@@ -32,7 +33,18 @@ const Appointment = (props) => {
   );
 
   const save = (name, interviewer) => {
-    
+    transition(SAVING);
+    const interview = {
+      student: name,
+      interviewer
+    };
+    props.bookInterview(props.id, interview)
+      .then(() => {
+        transition(SHOW);
+      })
+      .catch(() => {
+        console.log("something went wrong");
+      })
   }
 
 
@@ -56,7 +68,7 @@ const Appointment = (props) => {
       }
       { mode === CREATE &&
         <Form
-          
+          onSave={save}
         />
       }
     </article>
