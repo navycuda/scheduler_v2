@@ -27,7 +27,14 @@
  * @callback    BookInterview
  * @param       {Number}      id          The id of the appointment
  * @param       {Interview}   interview   The interview to be booked
- * @returns     {void}
+ * @returns     {Void}
+ */
+/**
+ * Edits an existing interview
+ * @callback    EditInterview
+ * @param       {Number}      id          The id of the appointment
+ * @param       {Interview}   interview   The interview to be booked
+ * @returns     {Void}     
  */
 /**
  * The custom hook for the Application Data
@@ -41,6 +48,7 @@
  * @property    {State}             state   Current state of the application
  * @property    {SetDay}            setDay  Sets the current day
  * @property    {BookInterview}     bookInterview books an interview in this slot
+ * @property    {EditInterview}     editInterview edits an existing interview
  */
 /**
  * useVisualMode return object
