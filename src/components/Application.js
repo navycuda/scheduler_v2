@@ -9,6 +9,7 @@ import DayList from "./DayList";
 import Appointment from "./Appointment";
 
 import { getAppointmentsForDay, getInterview } from "helpers/selectors";
+import { useApplicationData } from "helpers/hooks";
 
 /**
  * @type  {State}
@@ -21,13 +22,13 @@ const emptyState = {
 };
 
 const Application = () => {
-  const [ state, setState ] = useState(emptyState);
-  /**
-   * sets the currently selected day
-   * @param {String} day 
-   * @returns {void}
-   */
-  const setDay = (day) => setState({...state, day});
+  const {
+    state,
+    setDay,
+    bookInterview,
+    editInterview,
+    cancelInterview
+  } = useApplicationData();
   
   const dailyAppointments = getAppointmentsForDay(state);
   
