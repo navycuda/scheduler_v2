@@ -29,10 +29,14 @@
  * @param       {Interview}   interview   The interview to be booked
  * @returns     {void}
  */
-
+/**
+ * The custom hook for the Application Data
+ * @callback    UseApplicationData
+ * @returns     {ApplicationData}
+ */
 
 /**
- * ApplicationData hook object
+ * ApplicationData hook return object
  * @typedef     {Object}            ApplicationData
  * @property    {State}             state   Current state of the application
  * @property    {SetDay}            setDay  Sets the current day
