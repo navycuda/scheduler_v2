@@ -31,27 +31,6 @@ const Application = () => {
   
   const dailyAppointments = getAppointmentsForDay(state);
   
-  // Deal with days
-  useEffect(() => {
-    const urlGetDays = '/api/days';
-    const urlGetAppointments = '/api/appointments';
-    const urlGetInterviewers = '/api/interviewers';
-
-    Promise
-      .all([
-        Axios.get(urlGetDays),
-        Axios.get(urlGetAppointments),
-        Axios.get(urlGetInterviewers)
-      ])
-      .then((all) => {
-
-        setState((previous) => ({
-          ...previous,
-          days: all[0].data,
-          appointments: all[1].data
-        }));
-      });
-  }, []);
 
   // Deal with Appointments
   const schedule = dailyAppointments.map((appointment) => {
