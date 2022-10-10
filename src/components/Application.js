@@ -27,7 +27,8 @@ const Application = () => {
     setDay,
     bookInterview,
     editInterview,
-    cancelInterview
+    cancelInterview,
+    getSchedule
   } = useApplicationData();
   
   const dailyAppointments = getAppointmentsForDay(state);
