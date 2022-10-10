@@ -28,14 +28,6 @@ const Application = () => {
    * @returns {void}
    */
   const setDay = (day) => setState({...state, day});
-  /**
-   * Sets the days
-   * @param {Array.<Day>} days days to set state with
-   * @returns {void}
-   */
-  const setDays = (days) => setState((prev) => {
-    return {...prev, days };
-  });
   
   const dailyAppointments = getAppointmentsForDay(state);
   
