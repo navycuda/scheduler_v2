@@ -27,14 +27,20 @@
  * @callback    BookInterview
  * @param       {Number}      id          The id of the appointment
  * @param       {Interview}   interview   The interview to be booked
- * @returns     {Void}
+ * @returns     {Promise}
  */
 /**
  * Edits an existing interview
  * @callback    EditInterview
  * @param       {Number}      id          The id of the appointment
  * @param       {Interview}   interview   The interview to be booked
- * @returns     {Void}     
+ * @returns     {Promise}     
+ */
+/**
+ * Cancels an existing interview
+ * @callback    CancelInterview
+ * @param       {Number}      id          The id of the appointment
+ * @returns     {Promise}
  */
 /**
  * The custom hook for the Application Data
