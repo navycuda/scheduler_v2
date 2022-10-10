@@ -31,6 +31,7 @@
  */
 /**
  * Edits an existing interview
+ * @async
  * @callback    EditInterview
  * @param       {Number}      id          The id of the appointment
  * @param       {Interview}   interview   The interview to be booked
@@ -38,7 +39,6 @@
  */
 /**
  * Cancels an existing interview
- * @async
  * @callback    CancelInterview
  * @param       {Number}      id          The id of the appointment
  * @returns     {Promise}
