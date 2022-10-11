@@ -31,20 +31,7 @@ const Application = () => {
     getSchedule
   } = useApplicationData();
   
-  const dailyAppointments = getAppointmentsForDay(state);
-  
 
-  // Deal with Appointments
-  const schedule = dailyAppointments.map((appointment) => {
-    const interview = getInterview(state, appointment.interview);
-    return (
-      <Appointment 
-        key={appointment.id}
-        {...appointment}
-      />
-    );
-  });
-  schedule.push(<Appointment key="last" time="5pm" />);
 
 
   return (
@@ -70,7 +57,7 @@ const Application = () => {
         />
       </section>
       <section className="schedule">
-        {schedule}
+        {getSchedule()}
       </section>
     </main>
   );
