@@ -106,6 +106,16 @@ const Appointment = (props) => {
           onCancel={back}
         />
       }
+      { mode === EDIT &&
+        <Form
+          interviewers={props.interviewers}
+          student={props.interview.student}
+          instructor={props.interview.instructor}
+          onCancel={back}
+          onSave={edit}
+        />
+      }
+      
     </article>
   );
 };
