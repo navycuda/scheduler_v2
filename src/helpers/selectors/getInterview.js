@@ -11,6 +11,7 @@ import React from 'react';
 const getInterview = (state, interview) => {
   if (!interview) return null;
 
+  // @ts-ignore
   const interviewer = state.interviewers[interview.interviewer];
 
   return {
