@@ -123,7 +123,7 @@ const useApplicationData = () => {
         Axios.get(urlGetInterviewers)
       ])
       .then((all) => {
-
+        console.log("getSchedule : useEffect - all", all);
         setState((previous) => ({
           ...previous,
           days: all[0].data,
