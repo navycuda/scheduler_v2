@@ -130,10 +130,11 @@ const Appointment = (props) => {
           message="Deleting"
         />
       }
-      { mode === CONFIM &&
+      { mode === CONFIRM &&
         <Confirm
+          message="Are you sure you want to cancel?"
           onCancel={back}
-          cancelInterview={cancel}
+          onConfirm={cancel}
         />
       }
       { mode === ERROR_SAVE &&
