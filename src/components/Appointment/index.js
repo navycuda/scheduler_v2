@@ -54,6 +54,25 @@ const Appointment = (props) => {
       .catch(() => {
         transition(ERROR_SAVE);
       })
+  };
+
+  const edit = (name, interviewer) => {
+    transition(SAVING);
+    const interview = {
+      student: name,
+      interviewer
+    };
+    props.editInterview(props.id, interview)
+      .then(() => {
+        transition(SHOW);
+      })
+      .catch(() => {
+        transition(ERROR_EDIT);
+      })
+  };
+
+  const cancel = () => {
+    
   }
 
   console.log("Appointment props", props);
@@ -73,11 +92,14 @@ const Appointment = (props) => {
         <Show 
           student={props.interview.student}
           interviewer={props.interview.interviewer}
+          onDelete={() => transition(CONFIRM)}
+          onEdit={() => transition(EDIT)}
         />
       }
       { mode === CREATE &&
         <Form
           onSave={save}
+          onCancel={back}
         />
       }
     </article>
