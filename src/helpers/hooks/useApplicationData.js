@@ -1,8 +1,9 @@
 // src/helpers/hooks/useApplicationData.js
 // @ts-check
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { updateAppointmentsByState } from "helpers/operations";
-import { getAppointmentUrl } from "helpers/selectors";
+import { getAppointmentUrl, getAppointmentsForDay, getInterview } from "helpers/selectors";
+import Appointment from "components/Appointment";
 import Axios from "axios";
 
 /**
@@ -75,6 +76,30 @@ const useApplicationData = () => {
       });
   };
 
+  /**
+   * @type {GetSchedule}
+   */
+  const getSchedule = () => {
+
+    const appointments = getAppointmentsForDay(state);
+  
+    return appointments.map((appointment) => {
+      const interview = getInterview(state, appointment.interview);
+      return (
+        <Appointment
+          key={appointment.id}
+          {...appointment}
+        />
+      );
+    })
+    .push(
+      <Appointment
+        key="last"
+        time="5pm"
+      />
+    );
+  };
+
   useEffect(() => {
     const urlGetDays = '/api/days';
     const urlGetAppointments = '/api/appointments';
@@ -102,7 +127,8 @@ const useApplicationData = () => {
     setDay,
     bookInterview,
     editInterview,
-    cancelInterview
+    cancelInterview,
+    getSchedule
   };
 };
 
