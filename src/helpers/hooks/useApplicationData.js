@@ -80,16 +80,22 @@ const useApplicationData = () => {
    * @type {GetSchedule}
    */
   const getSchedule = () => {
+    // const interviewers = getInterviewersForDay(state);
 
     const appointments = getAppointmentsForDay(state);
     console.log("getSchedule : appointments", appointments);
     const result = appointments.map((appointment) => {
       const interview = getInterview(state, appointment.interview);
       return (
-        <Appointment
+        <Appointment 
           key={appointment.id}
-          {...appointment}
+          id={appointment.id}
+          time={appointment.time}
           interview={interview}
+          // interviewers={interviewers}
+          // bookInterview={bookInterview}
+          // editInterview={editInterview}
+          // cancelInterview={cancelInterview}
         />
       );
     });
@@ -121,7 +127,7 @@ const useApplicationData = () => {
           ...previous,
           days: all[0].data,
           appointments: all[1].data,
-          interviewers:all[2].data
+          interviewers: all[2].data
         }));
       });
   }, []);
