@@ -21,11 +21,15 @@ const SAVING = "SAVING";
 
 /**
  * The component that displays the appointment details
- * @param     {Object}        props
- * @param     {Number}        [props.id] - the id of this appointment
- * @param     {Number|String} props.key - react component key
- * @param     {String}        props.time - the appointment time
- * @param     {Interview}     [props.interview] - object with interview parameters
+ * @param     {Object}          props
+ * @param     {Number}          [props.id] - the id of this appointment
+ * @param     {Number|String}   props.key - react component key
+ * @param     {String}          props.time - the appointment time
+ * @param     {Interview}       [props.interview] - object with interview parameters
+ * @param     {Interviewers}    [props.interviewers]
+ * @param     {BookInterview}   [props.bookInterview]
+ * @param     {EditInterview}   [props.editInterview]
+ * @param     {CancelInterview} [props.cancelInterview]
  */
 const Appointment = (props) => {
   const { mode, transition, back } = useVisualMode(
