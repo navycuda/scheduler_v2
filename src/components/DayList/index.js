@@ -11,8 +11,6 @@ import Item from './Item';
  * @param     {Function}      props.onChange - sets the currectly selected day and accepts the name of the day
  */
 const DayList = (props) => {
-  console.log(props);
-  // Build array of items for the DayList
   const dayList = props.days.map((d) => {
     return (
       <Item
