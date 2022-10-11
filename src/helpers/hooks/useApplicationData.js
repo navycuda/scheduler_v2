@@ -94,9 +94,9 @@ const useApplicationData = () => {
           time={appointment.time}
           interview={interview}
           // interviewers={interviewers}
-          // bookInterview={bookInterview}
-          // editInterview={editInterview}
-          // cancelInterview={cancelInterview}
+          bookInterview={bookInterview}
+          editInterview={editInterview}
+          cancelInterview={cancelInterview}
         />
       );
     });
