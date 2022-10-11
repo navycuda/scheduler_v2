@@ -93,7 +93,7 @@ const useApplicationData = () => {
         />
       );
     });
-    console.log("getSchduel : result - before push", result)
+    console.log("getSchduel : result - before push", result);
     result.push(
       <Appointment
         key="last"
