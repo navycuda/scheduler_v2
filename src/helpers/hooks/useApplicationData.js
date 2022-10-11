@@ -82,7 +82,7 @@ const useApplicationData = () => {
   const getSchedule = () => {
 
     const appointments = getAppointmentsForDay(state);
-  
+    console.log("getSchedule : appointments", appointments);
     const result = appointments.map((appointment) => {
       const interview = getInterview(state, appointment.interview);
       return (
@@ -92,14 +92,15 @@ const useApplicationData = () => {
           interview={interview}
         />
       );
-    })
-    .push(
+    });
+    console.log("getSchduel : result - before push", result)
+    result.push(
       <Appointment
         key="last"
         time="5pm"
       />
     );
-
+    console.log("getSchedule : result - after push", result);
     return result;
   };
 
