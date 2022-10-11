@@ -11,16 +11,6 @@ import Appointment from "./Appointment";
 import { getAppointmentsForDay, getInterview } from "helpers/selectors";
 import { useApplicationData } from "helpers/hooks";
 
-/**
- * @type  {State}
- */
-const emptyState = {
-  day: "Monday",
-  days: [],
-  appointments: {},
-  interviewers: {}
-};
-
 const Application = () => {
   const {
     state,
