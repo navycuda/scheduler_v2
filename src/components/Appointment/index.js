@@ -79,6 +79,11 @@ const Appointment = (props) => {
       });
   };
 
+  const doubleBack = () => {
+    back();
+    back();
+  }
+
   console.log("Appointment props", props);
   return (
     <article
@@ -129,6 +134,18 @@ const Appointment = (props) => {
         <Confirm
           onCancel={back}
           cancelInterview={cancel}
+        />
+      }
+      { mode === ERROR_SAVE &&
+        <Error
+          message="Error saving new"
+          onClose={doubleBack}
+        />
+      }
+      { mode === ERROR_EDIT &&
+        <Error
+          message="Error saving edit"
+          onClose={doubleBack}
         />
       }
     </article>
