@@ -115,7 +115,22 @@ const Appointment = (props) => {
           onSave={edit}
         />
       }
-      
+      { mode === SAVING &&
+        <Status
+          message="Saving"
+        />
+      }
+      { mode === DELETE &&
+        <Status
+          message="Deleting"
+        />
+      }
+      { mode === CONFIM &&
+        <Confirm
+          onCancel={back}
+          cancelInterview={cancel}
+        />
+      }
     </article>
   );
 };
