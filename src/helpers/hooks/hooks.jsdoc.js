@@ -44,6 +44,11 @@
  * @returns     {Promise}
  */
 /**
+ * Gets the current schedule
+ * @callback    GetSchedule
+ * 
+ */
+/**
  * The custom hook for the Application Data
  * @callback    UseApplicationData
  * @returns     {ApplicationData}
@@ -57,6 +62,7 @@
  * @property    {BookInterview}     bookInterview books an interview in this slot
  * @property    {EditInterview}     editInterview edits an existing interview
  * @property    {CancelInterview}   cancelInterview removes an existing interview
+ * @property    {GetSchedule}       getSchedule gets the schedule array
  */
 /**
  * useVisualMode return object
