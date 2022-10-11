@@ -18,6 +18,11 @@ const EMPTY = "EMPTY";
 const SHOW = "SHOW";
 const CREATE = "CREATE";
 const SAVING = "SAVING";
+const DELETE = "DELETE";
+const CONFIRM = "CONFIRM";
+const EDIT = "EDIT";
+const ERROR_SAVE = "ERROR_SAVE";
+const ERROR_EDIT = "ERROR_EDIT";
 
 /**
  * The component that displays the appointment details
@@ -47,7 +52,7 @@ const Appointment = (props) => {
         transition(SHOW);
       })
       .catch(() => {
-        console.log("something went wrong");
+        transition(ERROR_SAVE);
       })
   }
 
