@@ -83,12 +83,13 @@ const useApplicationData = () => {
 
     const appointments = getAppointmentsForDay(state);
   
-    return appointments.map((appointment) => {
+    const result = appointments.map((appointment) => {
       const interview = getInterview(state, appointment.interview);
       return (
         <Appointment
           key={appointment.id}
           {...appointment}
+          interview={interview}
         />
       );
     })
@@ -98,6 +99,8 @@ const useApplicationData = () => {
         time="5pm"
       />
     );
+
+    return result;
   };
 
   useEffect(() => {
