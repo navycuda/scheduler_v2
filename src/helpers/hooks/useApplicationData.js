@@ -81,11 +81,12 @@ const useApplicationData = () => {
    */
   const getSchedule = () => {
     // const interviewers = getInterviewersForDay(state);
-
-    const appointments = getAppointmentsForDay(state);
+    
+    const appointments = Object.values(getAppointmentsForDay(state));
     console.log("getSchedule : appointments", appointments);
     const result = appointments.map((appointment) => {
       const interview = getInterview(state, appointment.interview);
+      console.log("getSchedule : getInterview :: interview", interview);
       return (
         <Appointment 
           key={appointment.id}
