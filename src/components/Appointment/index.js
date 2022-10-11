@@ -72,8 +72,12 @@ const Appointment = (props) => {
   };
 
   const cancel = () => {
-    
-  }
+    transition(DELETE);
+    props.cancelInterview(props.id)
+      .then(() => {
+        transition(EMPTY);
+      });
+  };
 
   console.log("Appointment props", props);
   return (
