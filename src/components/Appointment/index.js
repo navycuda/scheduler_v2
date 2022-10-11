@@ -47,7 +47,7 @@ const Appointment = (props) => {
       })
   }
 
-
+  console.log("Appointment props", props);
   return (
     <article
       className="appointment"
