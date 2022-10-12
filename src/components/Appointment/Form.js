@@ -30,6 +30,10 @@ const Form = (props) => {
     props.onCancel();
   }
 
+  const save = () => {
+    props.onSave(student, interviewer);
+  };
+
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
@@ -62,7 +66,7 @@ const Form = (props) => {
           </Button>
           <Button
             confirm
-            onClick={() => props.onSave(student, interviewer)}
+            onClick={save}
             >
             Save
           </Button>
