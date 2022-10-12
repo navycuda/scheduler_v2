@@ -2,7 +2,7 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
 import { updateAppointmentsByState } from "helpers/operations";
-import { getAppointmentUrl, getAppointmentsForDay, getInterview } from "helpers/selectors";
+import { getAppointmentUrl, getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import Appointment from "components/Appointment";
 import Axios from "axios";
 
@@ -25,7 +25,7 @@ const useApplicationData = () => {
   /**
    * @type {BookInterview}
    */
-  const bookInterview = (id, interview) => {
+  const bookInterview = async (id, interview) => {
     const appointments = updateAppointmentsByState(id, interview, state);
 
     return Axios.put(getAppointmentUrl(id), {interview})
@@ -80,7 +80,7 @@ const useApplicationData = () => {
    * @type {GetSchedule}
    */
   const getSchedule = () => {
-    // const interviewers = getInterviewersForDay(state);
+    const interviewers = getInterviewersForDay(state);
     
     const appointments = Object.values(getAppointmentsForDay(state));
     console.log("getSchedule : appointments", appointments);
@@ -93,7 +93,7 @@ const useApplicationData = () => {
           id={appointment.id}
           time={appointment.time}
           interview={interview}
-          // interviewers={interviewers}
+          interviewers={interviewers}
           bookInterview={bookInterview}
           editInterview={editInterview}
           cancelInterview={cancelInterview}
