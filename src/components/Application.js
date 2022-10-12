@@ -23,7 +23,7 @@ const Application = () => {
   
   const interviewers = getInterviewersForDay(state);
   console.log('interviewers', interviewers);
-  const appointments = Object.values(getAppointmentsForDay(state, state.day)).map((appointment) => {
+  const appointments = Object.values(getAppointmentsForDay(state)).map((appointment) => {
     const interview = getInterview(state, appointment.interview);
 
     return (
