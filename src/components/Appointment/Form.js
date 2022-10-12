@@ -48,6 +48,7 @@ const Form = (props) => {
             placeholder={placeholder}
             value={student}
             onChange={inputHandler}
+            data-testid="student-name-input"
           />
         </form>
         <InterviewerList 
