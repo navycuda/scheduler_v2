@@ -8,7 +8,7 @@ import "components/Application.scss";
 import DayList from "./DayList";
 import Appointment from "./Appointment";
 
-import { getAppointmentsForDay, getInterview } from "helpers/selectors";
+import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import { useApplicationData } from "helpers/hooks";
 
 const Application = () => {
@@ -21,7 +21,24 @@ const Application = () => {
     getSchedule
   } = useApplicationData();
   
+  const interviewers = getInterviewersForDay(state);
+  console.log('interviewers', interviewers);
+  const appointments = Object.values(getAppointmentsForDay(state, state.day)).map((appointment) => {
+    const interview = getInterview(state, appointment.interview);
 
+    return (
+      <Appointment 
+        key={appointment.id}
+        id={appointment.id}
+        time={appointment.time}
+        interview={interview}
+        interviewers={interviewers}
+        bookInterview={bookInterview}
+        editInterview={editInterview}
+        cancelInterview={cancelInterview}
+      />
+    );
+  });
 
 
   return (
@@ -47,7 +64,7 @@ const Application = () => {
         />
       </section>
       <section className="schedule">
-        {getSchedule()}
+        {appointments}
       </section>
     </main>
   );
