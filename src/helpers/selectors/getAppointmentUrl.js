@@ -6,6 +6,6 @@
  * @returns   {String}
  */
 const getAppointmentUrl = (id) => {
-  return `api/appointments/${id}`;
+  return `/api/appointments/${id}`;
 };
 export default getAppointmentUrl;
