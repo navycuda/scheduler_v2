@@ -47,6 +47,8 @@ const Appointment = (props) => {
       student: name,
       interviewer
     };
+    console.log("save : props.id", props.id);
+    console.log("save : interview", interview);
     props.bookInterview(props.id, interview)
       .then(() => {
         transition(SHOW);
@@ -116,7 +118,7 @@ const Appointment = (props) => {
         <Form
           interviewers={props.interviewers}
           student={props.interview.student}
-          instructor={props.interview.instructor}
+          interviewer={props.interview.interviewer}
           onCancel={back}
           onSave={edit}
         />
