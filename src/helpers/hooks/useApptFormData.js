@@ -52,9 +52,9 @@ const [ state, setState ] = useState({...emptyState, ...initial});
    * @type {Save}
    */
   const save = () => {
-    // if (validate()) {
+    if (validate()) {
         state.onSave(state.student, state.interviewer);
-    // }
+    }
   };
 
   /**
