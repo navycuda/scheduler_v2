@@ -17,10 +17,16 @@ const Form = (props) => {
   const [ student, setStudent ] = useState(props.student || "");
   const [ interviewer, setInterviewer ] = useState(props.interviewer || null);
   const placeholder = student ? null : "Enter Student Name";
+  const [ emptyText, setEmptyText ] = useState(false);
 
   // Handles the onChange of the intput and sets the student name
   const inputHandler = (e) => {
-    setStudent(e.target.value);
+    if (!e.target.value) {
+      setEmptyText(true);
+    } else {
+      setEmptyText(false);
+      setStudent(e.target.value);
+    }
   }
 
   // Resets all the values to zero, then cancels the Form
@@ -30,7 +36,18 @@ const Form = (props) => {
     props.onCancel();
   }
 
+  const EMTPY_TEXT = "student name cannot be blank";
+  const NO_INTERVIEWER = "NO_INTERVIEWER";
+
   const save = () => {
+    if (!student) {
+      setEmptyText(true);
+      return;
+    }
+    if (!interviewer) {
+
+    }
+    setEmptyText(false);
     props.onSave(student, interviewer);
   };
 
@@ -50,6 +67,11 @@ const Form = (props) => {
             onChange={inputHandler}
             data-testid="student-name-input"
           />
+          { emptyText &&
+            <div>
+              student name cannot be blank
+            </div>
+          }
         </form>
         <InterviewerList 
           interviewers={props.interviewers}
