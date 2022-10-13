@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import InterviewerList from 'components/InterviewerList';
 import Button from 'components/Button';
+import Validation from './Validation';
 
 /**
  * Form component used for edit and create
@@ -37,7 +38,7 @@ const Form = (props) => {
   }
 
   const EMTPY_TEXT = "student name cannot be blank";
-  const NO_INTERVIEWER = "NO_INTERVIEWER";
+  const NO_INTERVIEWER = "please select an interviewer";
 
   const save = () => {
     if (!student) {
@@ -69,9 +70,10 @@ const Form = (props) => {
           />
           { emptyText &&
             <div>
-              student name cannot be blank
+              {EMTPY_TEXT}
             </div>
           }
+
         </form>
         <InterviewerList 
           interviewers={props.interviewers}
