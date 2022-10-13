@@ -39,6 +39,9 @@ const [ state, setState ] = useState({...emptyState, ...initial});
     });
   };
 
+  /**
+   * @type {SetError} 
+   */
   const setError = (msg) => {
     setState((previous) => {
       return {
@@ -73,7 +76,9 @@ const [ state, setState ] = useState({...emptyState, ...initial});
     setStudent(e.target.value);
   };
 
-
+  /**
+   * @type {ValidateForm}
+   */
   const validate = () => {
     if (!state.student) {
       setError("student name cannot be blank");
