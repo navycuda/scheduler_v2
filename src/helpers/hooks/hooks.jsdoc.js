@@ -116,10 +116,10 @@
  */
 /**
  * useVisualMode return object
- * @typedef     {Object}      VisualMode
- * @property    {String}      mode - The current visual mode
- * @property    {Transition}  transition - Transitions to the next visual mode
- * @property    {Back}        back - goes back to the previous 
+ * @typedef     {Object}            VisualMode
+ * @property    {String}            mode - The current visual mode
+ * @property    {Transition}        transition - Transitions to the next visual mode
+ * @property    {Back}              back - goes back to the previous 
  */
 
 
