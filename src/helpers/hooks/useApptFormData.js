@@ -81,10 +81,10 @@ const [ state, setState ] = useState({...emptyState, ...initial});
    */
   const validate = () => {
     if (!state.student) {
-      setError("student name cannot be blank");
+      setError("Student name cannot be blank");
       return false;
     }else if (!state.interviewer) {
-      setError("please select an interviewer");
+      setError("Please select an interviewer");
       return false;
     } else {
       setError("");
