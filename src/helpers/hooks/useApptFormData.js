@@ -6,6 +6,7 @@ import { useState } from "react";
 const emptyState = {
   student: "",
   interviewer: null,
+  error: "",
   onSave: () => console.log(this)
 };
 /**
@@ -38,11 +39,22 @@ const [ state, setState ] = useState({...emptyState, ...initial});
     });
   };
 
+  const setError = (msg) => {
+    setState((previous) => {
+      return {
+        ...previous,
+        error: msg
+      };
+    });
+  };
+
   /**
    * @type {Save}
    */
   const save = () => {
-    state.onSave(state.student, state.interviewer);
+    // if (validate()) {
+        state.onSave(state.student, state.interviewer);
+    // }
   };
 
   /**
@@ -62,6 +74,19 @@ const [ state, setState ] = useState({...emptyState, ...initial});
   };
 
 
+  const validate = () => {
+    if (!state.student) {
+      setError("student name cannot be blank");
+      return false;
+    }else if (!state.interviewer) {
+      setError("please select an interviewer");
+      return false;
+    } else {
+      setError("");
+      return true;
+    }
+  };
+
   return {
     student:  state.student,
     setStudent,
@@ -70,7 +95,8 @@ const [ state, setState ] = useState({...emptyState, ...initial});
     save,
     reset,
     inputHandler,
-    placeholder: "Enter Student Name"
+    placeholder: "Enter Student Name",
+    error: state.error
   };
 };
 
