@@ -40,6 +40,11 @@ const Appointment = (props) => {
     props.interview ? SHOW : EMPTY
   );
 
+
+
+  /**
+   * @type {Appt_OnSave}
+   */
   const save = (name, interviewer) => {
     transition(SAVING);
     const interview = {
