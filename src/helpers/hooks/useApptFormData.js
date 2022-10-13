@@ -13,28 +13,50 @@ const emptyState = {
 const useApptFormData = () => {
 const [ state, setState ] = useState(emptyState);
 
+  /**
+   * @type {SetStudent}
+   */
+  const setStudent = () => {
 
+  };
 
+  /**
+   * @type {SetInterviewer}
+   */
+  const setInterviewer = () => {
 
+  };
+
+  /**
+   * @type {Save}
+   */
   const save = () => {
 
   };
 
+  /**
+   * @type {Reset}
+   */
   const reset = () => {
 
   };
 
-  const input = () => {
+  /**
+   * @type {InputHandler}
+   */
+  const inputHandler = () => {
 
   };
 
 
   return {
     student:  state.student,
+    setStudent,
     interviewer: state.interviewer,
+    setInterviewer,
     save,
     reset,
-    input
+    inputHandler
   };
 };
 
