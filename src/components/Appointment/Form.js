@@ -18,13 +18,13 @@ import useApptFormData from 'helpers/hooks/useApptFormData';
 const Form = (props) => {
   const {
     student,
-    setStudent,
     interviewer,
     setInterviewer,
     inputHandler,
     reset,
     save,
-    placeholder
+    placeholder,
+    error
   } = useApptFormData({
     student: props.student || "",
     interviewer: props.interviewer || null,
@@ -47,6 +47,9 @@ const Form = (props) => {
             value={student}
             onChange={inputHandler}
             data-testid="student-name-input"
+          />
+          <Validation 
+            message={error}
           />
         </form>
         <InterviewerList 
