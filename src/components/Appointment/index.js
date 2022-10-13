@@ -161,7 +161,6 @@ const Appointment = (props) => {
 };
 
 export default Object.assign(Appointment, {
-  views,
   Header,
   Empty,
   Show,
