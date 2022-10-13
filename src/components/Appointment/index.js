@@ -116,7 +116,7 @@ const Appointment = (props) => {
         <Form
           interviewers={props.interviewers}
           student={props.interview.student}
-          interviewer={props.interview.interviewer}
+          interviewer={props.interview.interviewer.id}
           onCancel={back}
           onSave={edit}
         />
