@@ -56,6 +56,7 @@
 /**
  * The custom hook for the Appointment Form Data
  * @callback    UseApptFormData
+ * @param       {Init_ApptFormData} initial The intial state for the form
  * @returns     {ApptFormData}
  */
 /**
@@ -84,6 +85,13 @@
  * @returns     {Void}
  */
 
+/**
+ * The initial state as sent to the apptform data
+ * @typedef     {Object}            Init_ApptFormData
+ * @property    {Appt_OnSave}       [onSave]
+ * @property    {String}            [student] The student name
+ * @property    {Number}            [interviewer] The interviewer id
+ */
 /**
  * The data from the Appointment Form
  * @typedef     {Object}            ApptFormData
