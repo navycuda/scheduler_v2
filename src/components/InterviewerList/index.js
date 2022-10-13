@@ -25,6 +25,8 @@ const interviewers = [
 const InterviewerList = (props) => {
   const selectedInterviewer = props.value;
 
+  console.log("InterviewerList : props", props);
+
   const getInterviewers = interviewers.map((interviewer) => {
     return (
       <Item 
