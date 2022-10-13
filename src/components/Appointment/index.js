@@ -8,7 +8,6 @@ import Form from './Form';
 import Confirm from './Confirm';
 import Status from './Status';
 import Error from './Error';
-import views from './views';
 
 import './Appointment.scss';
 
