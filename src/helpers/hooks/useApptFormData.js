@@ -17,15 +17,25 @@ const [ state, setState ] = useState({...emptyState, ...initial});
   /**
    * @type {SetStudent}
    */
-  const setStudent = () => {
-
+  const setStudent = (name) => {
+    setState((previous) => {
+      return {
+        ...previous,
+        student:name
+      };
+    });
   };
 
   /**
    * @type {SetInterviewer}
    */
-  const setInterviewer = () => {
-
+  const setInterviewer = (id) => {
+    setState((previous) => {
+      return {
+        ...previous,
+        interviewer: id
+      };
+    });
   };
 
   /**
@@ -39,14 +49,16 @@ const [ state, setState ] = useState({...emptyState, ...initial});
    * @type {Reset}
    */
   const reset = () => {
-
+    setStudent("");
+    setInterviewer(null);
+    state.onCancel();
   };
 
   /**
    * @type {InputHandler}
    */
-  const inputHandler = () => {
-
+  const inputHandler = (e) => {
+    setStudent(e.target.value);
   };
 
 
@@ -57,7 +69,8 @@ const [ state, setState ] = useState({...emptyState, ...initial});
     setInterviewer,
     save,
     reset,
-    inputHandler
+    inputHandler,
+    placeholder: "Enter Student Name"
   };
 };
 
