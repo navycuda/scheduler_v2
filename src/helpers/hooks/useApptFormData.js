@@ -5,13 +5,14 @@ import { useState } from "react";
 
 const emptyState = {
   student: "",
-  interviewer: null
+  interviewer: null,
+  onSave: () => console.log(this)
 };
 /**
  * @type {UseApptFormData}
  */
-const useApptFormData = () => {
-const [ state, setState ] = useState(emptyState);
+const useApptFormData = (initial) => {
+const [ state, setState ] = useState({...emptyState, ...initial});
 
   /**
    * @type {SetStudent}
@@ -31,7 +32,7 @@ const [ state, setState ] = useState(emptyState);
    * @type {Save}
    */
   const save = () => {
-
+    state.onSave(state.student, state.interviewer);
   };
 
   /**
