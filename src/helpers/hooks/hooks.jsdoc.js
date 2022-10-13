@@ -53,7 +53,16 @@
  * @callback    UseApplicationData
  * @returns     {ApplicationData}
  */
+/**
+ * The custom hook for the Appointment Form Data
+ * @callback    UseApptFormData
+ * @returns     {ApptFormData}
+ */
 
+/**
+ * The data from the Appointment Form
+ * @typedef     {Object}            ApptFormData
+ */
 /**
  * ApplicationData hook return object
  * @typedef     {Object}            ApplicationData
