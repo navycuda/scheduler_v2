@@ -32,6 +32,8 @@ const Form = (props) => {
     onCancel: props.onCancel
   });
 
+  console.log('Form : props', props);
+
   return (
     <main className="appointment__card appointment__card--create">
       <section className="appointment__card-left">
