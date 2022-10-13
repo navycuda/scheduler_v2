@@ -16,3 +16,11 @@
  * Appointments
  * @typedef     {{[id: Number]: Appointment}} Appointments
  */
+
+/**
+ * Appointment onSave
+ * @callback Appt_OnSave
+ * @property {String} name 
+ * @property {Interviewer} interviewer
+ * @returns {Void}
+ */
