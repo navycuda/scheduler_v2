@@ -62,12 +62,24 @@
 /**
  * Sets the student state
  * @callback    SetStudent
- * @property    {String}            student The students name
+ * @property    {String}            name The students name
+ * @returns     {Void}
  */
 /**
  * Sets the interviewer state
  * @callback    SetInterviewer
- * @property    {Number}            interviewer The interviewer id
+ * @property    {Number}            id The interviewer id
+ */
+/**
+ * Sets the error message for validation
+ * @callback    SetError
+ * @property    {String}            msg The validation message to display
+ * @returns     {Void}
+ */
+/**
+ * Method to validate the form has the required inputs
+ * @callback    ValidateForm
+ * @returns     {Boolean}
  */
 /**
  * Funtion to save the appointment
