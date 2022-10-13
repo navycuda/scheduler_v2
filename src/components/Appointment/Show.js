@@ -14,7 +14,6 @@ const Show = (props) => {
   const showInterviewerName = "i no name";
   const showStudentName = "s no name";
 
-  console.log("Show props", props);
   return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">

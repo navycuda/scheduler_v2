@@ -83,10 +83,8 @@ const useApplicationData = () => {
     const interviewers = getInterviewersForDay(state);
     
     const appointments = Object.values(getAppointmentsForDay(state));
-    console.log("getSchedule : appointments", appointments);
     const result = appointments.map((appointment) => {
       const interview = getInterview(state, appointment.interview);
-      console.log("getSchedule : getInterview :: interview", interview);
       return (
         <Appointment 
           key={appointment.id}
@@ -100,14 +98,12 @@ const useApplicationData = () => {
         />
       );
     });
-    console.log("getSchduel : result - before push", result);
     result.push(
       <Appointment
         key="last"
         time="5pm"
       />
     );
-    console.log("getSchedule : result - after push", result);
     return result;
   };
 
@@ -123,7 +119,6 @@ const useApplicationData = () => {
         Axios.get(urlGetInterviewers)
       ])
       .then((all) => {
-        console.log("getSchedule : useEffect - all", all);
         setState((previous) => ({
           ...previous,
           days: all[0].data,

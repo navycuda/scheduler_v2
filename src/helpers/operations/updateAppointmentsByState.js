@@ -9,7 +9,6 @@
  * @returns   {Appointments}
  */
 const updateAppointmentsByState = (id, interview, state) => {
-  console.log(id, interview);
   const appointment = {
     ...state.appointments[id],
     interview: {...interview}

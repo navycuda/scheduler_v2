@@ -40,8 +40,6 @@ const Appointment = (props) => {
     props.interview ? SHOW : EMPTY
   );
 
-
-
   /**
    * @type {Appt_OnSave}
    */
@@ -51,14 +49,11 @@ const Appointment = (props) => {
       student: name,
       interviewer
     };
-    console.log("save : props.id", props.id);
-    console.log("save : interview", interview);
     props.bookInterview(props.id, interview)
       .then(() => {
         transition(SHOW);
       })
       .catch((error) => {
-        console.log(error.message);
         transition(ERROR_SAVE);
       })
   };
@@ -91,7 +86,6 @@ const Appointment = (props) => {
     back();
   }
 
-  console.log("Appointment props", props);
   return (
     <article
       className="appointment"
