@@ -103,6 +103,7 @@
  * @property    {Reset}             reset
  * @property    {InputHandler}      inputHandler
  * @property    {String}            placeholder placeholder text for html
+ * @property    {String}            error user input validation error
  */
 /**
  * ApplicationData hook return object
