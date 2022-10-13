@@ -1,7 +1,7 @@
 // src/components/__tests__/Form.test.js
 import React from "react";
 
-import { render, cleanup } from "@testing-library/react";
+import { render, cleanup, fireEvent } from "@testing-library/react";
 
 import Form from "components/Appointment/Form";
 
@@ -16,17 +16,30 @@ describe("Form", () => {
     }
   ];
 
+  
   it("renders without student name if not provided", () => {
+    const { getByPlaceholderText } = render(<Form />);
     expect(getByPlaceholderText("Enter Student Name")).toHaveValue("");
   });
 
   it("renders with initial student name", () => {
+    const { getByTestId } = render(<Form 
+      student="Lydia Miller-Jones"
+    />);
     expect(getByTestId("student-name-input")).toHaveValue("Lydia Miller-Jones");
   });
 
-  
+
   it("validates that the student name is not blank", () => {
     /* 1. validation is shown */
+    const onSave = jest.fn();
+
+    const { getByText } = render(<Form 
+      onSave={onSave}
+    />);
+
+    fireEvent.click(getByText("Save"));
+
     expect(getByText(/student name cannot be blank/i)).toBeInTheDocument();
   
     /* 2. onSave is not called */
@@ -35,6 +48,13 @@ describe("Form", () => {
   
   it("validates that the interviewer cannot be null", () => {
     /* 3. validation is shown */
+    const onSave = jest.fn();
+    const { getByText } = render(<Form
+      student="Super Student3000" 
+      onSave={onSave}
+    />);
+
+
     expect(getByText(/please select an interviewer/i)).toBeInTheDocument();
   
     /* 4. onSave is not called */
