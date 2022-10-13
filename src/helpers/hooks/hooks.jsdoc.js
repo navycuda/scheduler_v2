@@ -56,7 +56,7 @@
 /**
  * The custom hook for the Appointment Form Data
  * @callback    UseApptFormData
- * @param       {Init_ApptFormData} initial The intial state for the form
+ * @param       {Init_ApptFormData} [initial] The intial state for the form
  * @returns     {ApptFormData}
  */
 /**
@@ -102,6 +102,7 @@
  * @property    {Save}              save
  * @property    {Reset}             reset
  * @property    {InputHandler}      inputHandler
+ * @property    {String}            placeholder placeholder text for html
  */
 /**
  * ApplicationData hook return object
