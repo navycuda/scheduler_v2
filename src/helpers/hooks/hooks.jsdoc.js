@@ -58,10 +58,42 @@
  * @callback    UseApptFormData
  * @returns     {ApptFormData}
  */
+/**
+ * Sets the student state
+ * @callback    SetStudent
+ * @property    {String}            student The students name
+ */
+/**
+ * Sets the interviewer state
+ * @callback    SetInterviewer
+ * @property    {Number}            interviewer The interviewer id
+ */
+/**
+ * Funtion to save the appointment
+ * @callback    Save
+ * @returns     {Void}
+ */
+/**
+ * Resets the form to empty
+ * @callback    Reset
+ * @returns     {Void}
+ */
+/**
+ * Handles the user input
+ * @callback    InputHandler
+ * @returns     {Void}
+ */
 
 /**
  * The data from the Appointment Form
  * @typedef     {Object}            ApptFormData
+ * @property    {String}            student The student name
+ * @property    {SetStudent}        setStudent Sets the student name
+ * @property    {Number}            interviewer Interviewer id
+ * @property    {SetInterviewer}    setInterviewer sets the interviewer id
+ * @property    {Save}              save
+ * @property    {Reset}             reset
+ * @property    {InputHandler}      inputHandler
  */
 /**
  * ApplicationData hook return object
