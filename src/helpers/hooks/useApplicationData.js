@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { updateAppointmentsByState } from "helpers/operations";
 import { getAppointmentUrl, getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 import Appointment from "components/Appointment";
-import Axios from "axios";
+import axios from "axios";
 
 /**
  * @type {UseApplicationData}
@@ -25,10 +25,10 @@ const useApplicationData = () => {
   /**
    * @type {BookInterview}
    */
-  const bookInterview = async (id, interview) => {
+  const bookInterview = async (id, interview, ) => {
     const appointments = updateAppointmentsByState(id, interview, state);
 
-    return Axios.put(getAppointmentUrl(id), {interview})
+    return axios.put(getAppointmentUrl(id), {interview})
       .then(() => {
         setState((previous) => ({
           ...previous,
@@ -55,7 +55,7 @@ const useApplicationData = () => {
    * @type {CancelInterview}
    */
   const cancelInterview = async (id) => {
-    return Axios.delete(getAppointmentUrl(id))
+    return axios.delete(getAppointmentUrl(id))
       .then(() => {
         setState((previous) => ({
           ...previous,
@@ -114,9 +114,9 @@ const useApplicationData = () => {
 
     Promise
       .all([
-        Axios.get(urlGetDays),
-        Axios.get(urlGetAppointments),
-        Axios.get(urlGetInterviewers)
+        axios.get(urlGetDays),
+        axios.get(urlGetAppointments),
+        axios.get(urlGetInterviewers)
       ])
       .then((all) => {
         setState((previous) => ({
