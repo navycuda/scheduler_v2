@@ -1,5 +1,4 @@
 // src/components/__tests__/useVisualMode.test.js
-// @ts-check
 import { renderHook, act } from "@testing-library/react-hooks";
 import { useVisualMode } from "helpers/hooks";
 
