@@ -1,5 +1,4 @@
 // src/__mocks__/axios.js
-// @ts-check
 const fixtures = {
   days: [
     {
@@ -55,3 +54,20 @@ const fixtures = {
   }
 };
 
+const axios = {
+  get: jest.fn((url) => {
+
+
+
+
+
+  }),
+  put: jest.fn((url) => {
+
+  }),
+  delete: jest.fn((url) => {
+
+  })
+};
+
+export default axios;
